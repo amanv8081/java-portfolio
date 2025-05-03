@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Meri Jaan</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://img.freepik.com/premium-vector/illustration-love-valentine-day_60545-291.jpg?w=740') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10vh 2vw;
+  gap: 30px;
+}
+
+.image-content {
+  order: 2;
+}
+
+.text-content {
+  order: 1;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-content {
+    order: 2;
+  }
+
+  .text-content {
+    order: 1;
+  }
+
+  .birthday {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+
+    h1 {
+      font-size: 3.5em;
+      animation: fadeIn 2s ease-in-out, glow 2s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px #ff69b4;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 1em;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    img.birthday {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #fff;
+      margin-top: 20px;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff6ec4, 0 0 30px #ff6ec4;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff1493, 0 0 40px #ff1493;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgb(255, 0, 0);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Birthday Meri Jaan!</h1>
+    <p>You're the sparkle in my life ✨❤️ Wishing you endless joy, hugs & kisses!</p><br><br><br><br><br><br><br><br>
+    <img class="birthday" src="https://img.freepik.com/premium-vector/happy-birthday-lettering-calligraphy-slogan-flowers-illustration-text_83277-5513.jpg?w=740" alt="Birthday Love">
+  </div>
+
+  <script>
+    // Floating hearts
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.width = `${15 + Math.random() * 10}px`;
+      heart.style.height = `${15 + Math.random() * 10}px`;
+      heart.style.background = `hsl(${Math.random() * 20 + 340}, 100%, 70%)`;
+      heart.style.animationDelay = `${Math.random() * 10}s`;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
